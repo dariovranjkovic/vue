@@ -8,19 +8,20 @@
 	<script src="vue.js"></script>
 </head>
 <body>
+
 	<div id="app">
-		<input type="text" v-on:input="changeGreeting"></input>
-		<p>{{ greeting }}</p>
+		<p>{{ sayHello() }}</p>
 	</div>
+
 	<script>
 		new Vue({
 			el: '#app',
 			data: {
 				greeting: 'Hello World!'
 			},
-			methods: {
-				changeGreeting: function(event) {
-					this.greeting = event.target.value;
+			methods:{
+				sayHello: function(){
+					return 'Hello!';
 				}
 			}
 		})
