@@ -7,36 +7,42 @@
     <title>VueJS</title>
     <link rel="stylesheet" href="">
     <script src="vue.js"></script>
+    
+    <style>
+        .demo{
+            width: 100px;
+            height: 100px;
+            background: grey;
+            margin: 10px;
+            display: inline-block;
+        }   
+        .red{
+            background: red;
+        }
+        .blue{
+            background: blue;
+        }
+        .green{
+            background: green;
+        }
+    </style>
 </head>
 
 <body>
 
     <div id="app">
-        <button v-on:click="counter++">Increase</button>
-        <button v-on:click="counter--">Decrease</button>
-        <p>{{counter}}</p>
-        <p>{{ result() }}</p>
+        <div class="demo" 
+             @click="attachRed = !attachRed" 
+             :class="{red: attachRed}"></div>
+        <div class="demo"></div>
+        <div class="demo"></div>
     </div>
 
     <script>
         new Vue({
             el: '#app',
             data: {
-                counter: 0,
-                result: ''
-            },
-            watch: {
-                counter: function(value){
-                    var vm = this;
-                    setTimeout(function() {
-                        vm.counter = 0;
-                    }, 2000);
-                }
-            },
-            methods: {
-                result(){
-                    return this.counter > 5 ? 'Greater 5' : 'Smaller than 5'
-                }    
+                attachRed: false    
             }
         })
     </script>
