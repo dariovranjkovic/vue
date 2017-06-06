@@ -36,8 +36,9 @@
     <div id="app">
         <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
         <div class="demo" :class="color"></div>
-        <div class="demo"></div>
+        <div class="demo" :style="myStyle"></div>
         <input type="text" v-model="color">
+        <input type="text" v-model="width">
     </div>
 
     <script>
@@ -45,14 +46,15 @@
             el: '#app',
             data: {
                 attachRed: false,
-                color: 'red'
+                color: 'red',
+                width: 10
             },
             computed: {
-                divClasses: function(){
+                myStyle: function(){
                     return{
-                        red: this.attachRed,
-                        blue: !this.attachRed
-                    };
+                        backgroundColor: this.color,
+                        width: this.width + 'px'
+                    }
                 }
             }
         })
