@@ -12,15 +12,31 @@
 <body>
 
     <div id="app">
-        <input type="text" v-model="name">
-        <p>{{name}}</p>
+        <button v-on:click="counter++">Increase</button>
+        <button v-on:click="counter--">Decrease</button>
+        <p>{{counter}}</p>
+        <p>{{ result() }}</p>
     </div>
 
     <script>
         new Vue({
             el: '#app',
             data: {
-                name: "Dario"
+                counter: 0,
+                result: ''
+            },
+            watch: {
+                counter: function(value){
+                    var vm = this;
+                    setTimeout(function() {
+                        vm.counter = 0;
+                    }, 2000);
+                }
+            },
+            methods: {
+                result(){
+                    return this.counter > 5 ? 'Greater 5' : 'Smaller than 5'
+                }    
             }
         })
     </script>
