@@ -12,40 +12,15 @@
 <body>
 
     <div id="app">
-        <button v-on:click="increase(2, $event)">Click me</button>
-        <button v-on:click="counter ++">Click me</button>
-
-        <p>{{ counter > 10 ? 'Greater than 10' : 'Small than 10'}}</p>
-
-        <p>{{counter}}</p>
-
-        <p v-on:mousemove="updateCoordinates">
-            Coordinates: {{x}} / {{y}}
-            <span v-on:mousemove.stop>Dead spot</span>
-        </p>
-
-        <input type="text" v-on:keyup.enter="alertMe">
+        <input type="text" v-model="name">
+        <p>{{name}}</p>
     </div>
 
     <script>
         new Vue({
             el: '#app',
             data: {
-                counter: 0,
-                x: 0,
-                y: 0
-            },
-            methods: {
-                increase: function(step, event) {
-                    this.counter += step;
-                },
-                updateCoordinates: function(event) {
-                    this.x = event.clientX;
-                    this.y = event.clientY;
-                },
-                alertMe: function(event) {
-                    alert("Alert");
-                }
+                name: "Dario"
             }
         })
     </script>
