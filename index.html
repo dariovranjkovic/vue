@@ -16,6 +16,12 @@
             <li v-for=" (ingredient, i) in ingredients">{{ ingredient }} ({{i}})</li>
         </ul>
         
+        <hr>
+            <ul v-for="person in persons">
+                <li>{{person.name}}</li>
+            </ul>
+        <hr>
+        
         <template  v-for=" (ingredient, i) in ingredients">
             <h3>{{ ingredient }}</h3>
             <h4> {{i}} </h4>
@@ -29,7 +35,9 @@
                 ingredients: ['meat', 'fruit', 'cookies'],
                 persons: [
                     {name: 'Dario', age: 26, color: 'blue' },
-                    {name: 'Mario', age: 21, color: 'white' }
+                    {name: 'Mario', age: 21, color: 'white' },
+                    {name: 'Ante', age: 28, color: 'pink' },
+                    {name: 'Marija', age: 22, color: 'yellow' }
                 ]
             }
         })
