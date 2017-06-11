@@ -7,55 +7,21 @@
     <title>VueJS</title>
     <link rel="stylesheet" href="">
     <script src="vue.js"></script>
-
-    <style>
-        .demo {
-            width: 100px;
-            height: 100px;
-            background: grey;
-            margin: 10px;
-            display: inline-block;
-        }
-        
-        .red {
-            background: red;
-        }
-        
-        .blue {
-            background: blue;
-        }
-        
-        .green {
-            background: green;
-        }
-    </style>
 </head>
 
 <body>
 
     <div id="app">
-        <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
-        <div class="demo" :class="color"></div>
-        <div class="demo" :style="[myStyle, {height: width*2 + 'px'}]"></div>
-        <input type="text" v-model="color">
-        <input type="text" v-model="width">
+        <p v-if="show">You can see me!</p>
+        <p>Do you also see me?</p>
+        <button @click="show = !show">Switch</button>
     </div>
 
     <script>
         new Vue({
             el: '#app',
             data: {
-                attachRed: false,
-                color: 'red',
-                width: 10
-            },
-            computed: {
-                myStyle: function(){
-                    return{
-                        backgroundColor: this.color,
-                        width: this.width + 'px'
-                    }
-                }
+                show: true
             }
         })
     </script>
