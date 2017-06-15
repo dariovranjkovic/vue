@@ -15,20 +15,20 @@
         <ul>
             <li v-for=" (ingredient, i) in ingredients" :key="ingredient">{{ ingredient }} ({{i}})</li>
         </ul>
-        
-                <button @click="ingredients.push('test')">Add New</button>
-        
+
+        <button @click="ingredients.push('test')">Add New</button>
+
         <hr>
-            <ul v-for="person in persons">
-                <div v-for="(value, key, index) in person"> {{key}}: {{value}} ({{index}})</div>
-            </ul>
+        <ul v-for="person in persons">
+            <div v-for="(value, key, index) in person"> {{key}}: {{value}} ({{index}})</div>
+        </ul>
         <hr>
-        
+
         <hr>
-            <span v-for="n in 10"> {{n}}</span>
+        <span v-for="n in 10"> {{n}}</span>
         <hr>
-        
-        <template  v-for=" (ingredient, i) in ingredients">
+
+        <template v-for=" (ingredient, i) in ingredients">
             <h3>{{ ingredient }}</h3>
             <h4> {{i}} </h4>
         </template>
@@ -39,12 +39,23 @@
             el: '#app',
             data: {
                 ingredients: ['meat', 'fruit', 'cookies'],
-                persons: [
-                    {name: 'Dario', age: 26, color: 'blue' },
-                    {name: 'Mario', age: 21, color: 'white' },
-                    {name: 'Ante', age: 28, color: 'pink' },
-                    {name: 'Marija', age: 22, color: 'yellow' }
-                ]
+                persons: [{
+                    name: 'Dario',
+                    age: 26,
+                    color: 'blue'
+                }, {
+                    name: 'Mario',
+                    age: 21,
+                    color: 'white'
+                }, {
+                    name: 'Ante',
+                    age: 28,
+                    color: 'pink'
+                }, {
+                    name: 'Marija',
+                    age: 22,
+                    color: 'yellow'
+                }]
             }
         })
     </script>
