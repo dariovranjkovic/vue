@@ -11,6 +11,7 @@ new Vue({
             this.playerHealth = 100;
             this.monsterHealth = 100;
             this.gameIsRunning = true;
+            this.turns = [];
         },
         attack: function () {
             var damage = this.calculateDamage(3, 10);
