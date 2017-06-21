@@ -1,3 +1,7 @@
+Vue.component('hello', {
+    template: '<h1>Hello !</h1>'
+});
+
 var vm1 = new Vue({
   el: '#app1',
   data: {
